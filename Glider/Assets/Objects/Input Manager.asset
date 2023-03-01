@@ -26,67 +26,67 @@ MonoBehaviour:
     actionType: 0
     variable: {fileID: 11400000, guid: c440165e4ca8da84ba05c63825508c80, type: 2}
   inputActions:
-  - m_Name: 
+  - m_Name: Element 0
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: dbbf6fbe-f0e3-470c-b8bd-a2ea76ce699e
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 
+      m_Id: 188832f5-e837-421f-a180-a60753d3a2bc
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Element 0
       m_Flags: 0
     m_Flags: 0
-  - m_Name: 
+  - m_Name: Element 1
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: 872b5d73-36ff-4e28-bd38-92f808c2ffe8
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 
+      m_Id: 57314670-f708-4d24-836b-f4ae2972851d
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Element 1
       m_Flags: 0
     m_Flags: 0
-  - m_Name: 
+  - m_Name: Element 2
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: 8b3b6d0d-bbe3-45de-ace1-1bf02b7e760b
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 
+      m_Id: 22f80c75-1387-4159-a8dd-135b9c666100
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Element 2
       m_Flags: 0
     m_Flags: 0
-  - m_Name: 
+  - m_Name: Element 3
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: 86fd5d07-fe7b-4159-86b9-0b7d0ce94900
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 
+      m_Id: d935e803-fc99-4c42-8f07-9cbd26394f34
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: 
+      m_Action: Element 3
       m_Flags: 0
     m_Flags: 0
