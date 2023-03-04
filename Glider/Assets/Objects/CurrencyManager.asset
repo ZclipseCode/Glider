@@ -16,3 +16,4 @@ MonoBehaviour:
     useConstant: 0
     constantValue: 9
     variable: {fileID: 11400000, guid: f1173200fff89ab4f9853c03625597b6, type: 2}
+  currencyEventTarget: {fileID: 11400000, guid: 9d04f32e9649fc640b6f630ee94dcb8c, type: 2}

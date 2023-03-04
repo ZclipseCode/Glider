@@ -8,8 +8,9 @@ namespace Lucas.Currency
     public class CurrencyManager : ScriptableObject
     {
         [SerializeField] private FloatReference walletSize;
+        [SerializeField] private EventChainObject currencyEventTarget;
 
-        public void SubscribeToEvents(IEnumerable<Coin> coins)
+        public void SubscribeToCollectionEvent(IEnumerable<Coin> coins)
         {
             foreach (var coin in coins)
             {
@@ -21,8 +22,15 @@ namespace Lucas.Currency
         {
             if (sender is not Coin coin)
                 return;
-            walletSize.Value += coin.CoinValue;
+            UpdateCurrency(e.Value);
             Destroy(coin.gameObject);
+        }
+
+        private void UpdateCurrency(float value)
+        {
+            walletSize.Value += value;
+            var e = new ChainedEventArgs(walletSize.Value);
+            currencyEventTarget.CallEvent(this, e);
         }
     }
 }
