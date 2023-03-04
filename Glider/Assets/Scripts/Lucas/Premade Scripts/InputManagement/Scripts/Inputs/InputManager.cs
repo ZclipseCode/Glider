@@ -12,7 +12,7 @@ namespace InputManagement.Inputs
         public GenericVariable Variable;
     }
 
-    [CreateAssetMenu(fileName = "Input Manager")]
+    [CreateAssetMenu(fileName = "Input Manager", menuName = "Managers/Input Manager")]
     public class InputManager : ScriptableObject
     {
         [Serializable]
