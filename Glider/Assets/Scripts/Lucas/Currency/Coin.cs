@@ -5,20 +5,9 @@ using Lucas;
 
 namespace Lucas.Currency
 {
-    public class CurrencyExchangeArgs
+    public class CurrencyExchangeArgs : EventArgs
     {
-        private float value;
-        public float Value
-        {
-            get
-            {
-                return value;
-            }
-            private set
-            {
-                this.value = value;
-            }
-        }
+        public float Value { get; private set; }
 
         public CurrencyExchangeArgs(float value)
         {
@@ -45,7 +34,7 @@ namespace Lucas.Currency
         public void CallCollectionEvent()
         {
             var e = new CurrencyExchangeArgs(coinValue.Value);
-            OnCollectionEvent.Invoke(this, e);
+            OnCollectionEvent?.Invoke(this, e);
         }
     }
 }
