@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 441927358}
   - component: {fileID: 441927357}
   - component: {fileID: 441927356}
-  - component: {fileID: 441927355}
   - component: {fileID: 441927361}
   m_Layer: 0
   m_Name: Player
@@ -242,29 +241,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &441927355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441927354}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7591e6aae9309d84b962e285fbc1d5f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wasd: {fileID: 11400000, guid: 793f929432d803c4b8799c45264da696, type: 2}
-  space: {fileID: 11400000, guid: e092073026295334d84797154f3a23e2, type: 2}
-  moveSpeed: 3
-  groundDrag: 5
-  jumpForce: 6
-  jumpCooldown: 0.75
-  playerHeight: 2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  orientation: {fileID: 441927360}
 --- !u!54 &441927356
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -383,7 +359,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  orientation: {fileID: 854847113}
 --- !u!1 &854847112
 GameObject:
   m_ObjectHideFlags: 0
