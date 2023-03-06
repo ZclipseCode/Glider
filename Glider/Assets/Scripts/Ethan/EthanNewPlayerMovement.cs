@@ -8,7 +8,7 @@ using ReferenceVariables;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody))]
-public class NewPlayerMovement : MonoBehaviour
+public class EthanNewPlayerMovement : MonoBehaviour
 {
     [Header("Lucas Inputs")]
     [SerializeField] BidirectionalFloat wasd;
@@ -51,9 +51,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
-
-    public bool GetGrounded()
-    {
-        return grounded;
+    public bool GetReadyToJump() {
+        return readyToJump;
     }
 }
