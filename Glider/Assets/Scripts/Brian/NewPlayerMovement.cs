@@ -56,8 +56,4 @@ public class NewPlayerMovement : MonoBehaviour
     {
         return grounded;
     }
-
-    public bool GetReadyToJump() {
-        return readyToJump;
-    }
 }
