@@ -10,8 +10,8 @@ using UnityEngine.EventSystems;
 public class EthanGlide : MonoBehaviour
 {
     Rigidbody body;
-    [SerializeField] EthanNewPlayerMovement movement;
-    [SerializeField] Camera cam;
+    [SerializeField] NewPlayerMovement movement;
+    [SerializeField] GameObject cam;
     [SerializeField] FloatVariable space;
     [SerializeField] LayerMask whatIsGround;
     [SerializeField] float playerHeight = 1.01f, momentum;
