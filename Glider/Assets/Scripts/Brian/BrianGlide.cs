@@ -14,14 +14,18 @@ public class BrianGlide : MonoBehaviour
     [SerializeField] FloatVariable space;
 
     [Header("Gliding")]
-    [SerializeField] Camera cam;
-    [SerializeField] float momentum;
+    //[SerializeField] Camera cam;
+    //[SerializeField] float momentum;
     [SerializeField] Transform camAttach;
+    [SerializeField] float baseGlide;
     bool grounded;
-    bool gliding = false;
+    //bool gliding = false;
     Rigidbody body;
     NewPlayerMovement movement;
-    float terminalVelocity = 60;
+    //float terminalVelocity = 60;
+    [SerializeField] float boostMultiplier;
+    float boost = 1;
+    bool boosted;
 
     private void Start()
     {
@@ -35,31 +39,42 @@ public class BrianGlide : MonoBehaviour
 
         if (jumpInput > 0 && !grounded)
         {
-            gliding = true;
-            momentum = 2;
+            Glide();
+            //gliding = true;
+            //momentum = 2;
         }
-        if (jumpInput < 1 || grounded || momentum < 1)
+
+        if (/*jumpInput < 1 || */grounded/* || momentum < 1*/)
         {
-            gliding = false;
-            momentum = 0;
+            boost = 1;
+            //gliding = false;
+            //momentum = 0;
         }
+    }
 
-        if (gliding)
+    public void Glide()
+    {
+        float glideMultiplier = camAttach.rotation.x;
+        //float boost = 1;
+        Debug.Log(boost);
+        body.velocity += Vector3.up * baseGlide * (-glideMultiplier) * boost;
+
+        if (glideMultiplier >= 0)
         {
-            if (camAttach.rotation.x > 0)
+            if (body.velocity.y < -30 && !boosted)
             {
-                //momentum = Mathf.Lerp(momentum, terminalVelocity, cam.transform.rotation.x / 10);
-                momentum = Mathf.Lerp(momentum, terminalVelocity, camAttach.rotation.x / 10);
-            }
-            else if (cam.transform.rotation.x < 0)
-            {
-                //momentum = Mathf.Lerp(momentum, 0, Mathf.Abs(cam.transform.rotation.x / 10));
-                momentum = Mathf.Lerp(momentum, 0, Mathf.Abs(camAttach.rotation.x / 10));
+                body.velocity = new Vector3(0, 30, 0);
+                boosted = true;
             }
 
-            body.velocity = camAttach.right * 0 + momentum * camAttach.forward + camAttach.up * 0;
+
+            boost += Time.deltaTime * boostMultiplier;
         }
-
-        //Debug.Log(camAttach.rotation.x / 10);
+        else
+        {
+            
+            boosted = false;
+            boost -= Time.deltaTime * boostMultiplier;
+        }
     }
 }
