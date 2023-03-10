@@ -28,6 +28,9 @@ MonoBehaviour:
   - binding: <Keyboard>/space
     actionType: 1
     variable: {fileID: 11400000, guid: e092073026295334d84797154f3a23e2, type: 2}
+  - binding: <Keyboard>/shift
+    actionType: 1
+    variable: {fileID: 11400000, guid: f12045e95acfe4549ba27e487b2ee437, type: 2}
   inputActions:
   - m_Name: 
     m_Type: 0
@@ -103,6 +106,22 @@ MonoBehaviour:
     - m_Name: 
       m_Id: 
       m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: 
+      m_Flags: 0
+    m_Flags: 0
+  - m_Name: 
+    m_Type: 1
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 
+      m_Path: <Keyboard>/shift
       m_Interactions: 
       m_Processors: 
       m_Groups: 
