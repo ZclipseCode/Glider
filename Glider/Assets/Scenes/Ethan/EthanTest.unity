@@ -135,13 +135,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358580846}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f49c5ce81044f54b9340aaac574e415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {fileID: 358580850}
-  cam: {fileID: 1620646931}
+  movement: {fileID: 358580860}
+  cam: {fileID: 1620646934}
   space: {fileID: 11400000, guid: e092073026295334d84797154f3a23e2, type: 2}
   whatIsGround:
     serializedVersion: 2
@@ -150,17 +150,29 @@ MonoBehaviour:
   momentum: 0
   grounded: 0
   gliding: 0
---- !u!114 &358580850 stripped
+  gainAmount: 10
+  loseAmount: 2
+--- !u!114 &358580860
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 325002478040539743, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
-  m_PrefabInstance: {fileID: 1452539009}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358580846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887effddf0ca10c4483b5002b35b73e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e8caef26cb7f694fb16e50324edf531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wasd: {fileID: 11400000, guid: 793f929432d803c4b8799c45264da696, type: 2}
+  space: {fileID: 11400000, guid: e092073026295334d84797154f3a23e2, type: 2}
+  moveSpeed: 3
+  jumpForce: 5
+  jumpCooldown: 1
+  playerHeight: 1.01
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &520789604
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,15 +375,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 325002478040539743, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 325002478040539809, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
---- !u!1 &1620646931 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 325002479214601520, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
+--- !u!20 &1620646934 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 325002479214601523, guid: 9a6b7fa288e8d7e4ea850eab7bf997bf, type: 3}
   m_PrefabInstance: {fileID: 1452539009}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1855726570
