@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class CSVReader : MonoBehaviour
 {
-    [System.Serializable]
+    TextMeshProUGUI scoreText;
+
     public class HighScore
     {
         public string playerName;
@@ -20,7 +22,7 @@ public class CSVReader : MonoBehaviour
             this.score = score;
         }
     }
-    [System.Serializable]
+ 
     public class HighScoreList
     {
         public HighScore[] highScore;
@@ -57,8 +59,15 @@ public class CSVReader : MonoBehaviour
                     float score = float.Parse(columns[2]);
 
                     highScoreList.highScore[i] = new HighScore(playerName, time, score);
+                    scoreText = GameObject.FindGameObjectWithTag("Scores Layout").GetComponentInChildren<TextMeshProUGUI>();
+                    DisplayScores(highScoreList.highScore[i]);
                 }
             }
         }
+    }
+
+    public void DisplayScores(HighScore highScore)
+    {
+        scoreText.text += $"{highScore.playerName} {highScore.time} {highScore.score}";
     }
 }
