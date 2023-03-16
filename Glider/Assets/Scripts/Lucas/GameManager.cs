@@ -1,6 +1,9 @@
 using InputManagement.Inputs;
 using UnityEngine;
 using Lucas.Currency;
+// Brian time
+using System.IO;
+//
 
 namespace Lucas
 {
@@ -16,6 +19,10 @@ namespace Lucas
         
         private int numCoins;
         private float timer;
+
+        // Brian time
+        bool once;
+        //
         
         private void Awake()
         {
@@ -34,6 +41,20 @@ namespace Lucas
         private void Update()
         {
             if (numCoins > 0) UpdateTimer();
+            else if (numCoins <= 0 && !once) // Brian time
+            {
+                CSVWriter writer = gameObject.AddComponent<CSVWriter>();
+                writer.WritesCSV("Player", timer, currencyManager.GetWalletSize());
+                Destroy(writer);
+
+                CSVReader reader = gameObject.AddComponent<CSVReader>();
+                reader.ReadCSV(Application.dataPath + "/GliderScores.csv");
+
+                Destroy(reader);
+
+                once = true;
+            }
+            //
         }
 
         private void SubscribeToCollectionEvent(Coin[] coins)

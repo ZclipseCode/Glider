@@ -32,5 +32,12 @@ namespace Lucas.Currency
             var e = new ChainedEventArgs(walletSize.Value);
             currencyEventTarget.CallEvent(this, e);
         }
+
+        // Brian time
+        public float GetWalletSize()
+        {
+            return walletSize.Value;
+        }
+        //
     }
 }

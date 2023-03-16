@@ -5,12 +5,12 @@ using System.Windows.Forms;
 
 public class FileManager : MonoBehaviour
 {
-    void Start()
-    {
-        SelectFile();
-    }
+    //void Start()
+    //{
+    //    SelectFile();
+    //}
 
-    public void SelectFile()
+    public void SelectFile(CSVReader reader)
     {
         OpenFileDialog openFileDialog = new OpenFileDialog();
         openFileDialog.Filter = "CSV files (*.csv)|*.csv";
@@ -21,7 +21,8 @@ public class FileManager : MonoBehaviour
         {
             string filePath = openFileDialog.FileName;
             // Do something with the selected file path
-            Debug.Log("Selected file: " + filePath);
+            //Debug.Log("Selected file: " + filePath);
+            reader.ReadCSV(filePath);
         }
     }
 }
