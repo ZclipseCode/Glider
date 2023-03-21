@@ -33,7 +33,7 @@ namespace Lucas.Currency
 
         public void CallCollectionEvent()
         {
-            var e = new CurrencyExchangeArgs(coinValue.Value);
+            var e = new CurrencyExchangeArgs(CoinValue);
             OnCollectionEvent?.Invoke(this, e);
         }
     }
